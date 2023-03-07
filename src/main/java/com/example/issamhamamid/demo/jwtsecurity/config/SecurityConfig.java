@@ -62,7 +62,7 @@ public class SecurityConfig {
        return http.csrf()
                 .disable()
                         .authorizeHttpRequests()
-                         .requestMatchers( "/adduser" , "/auth" , "/validate").permitAll()
+                         .requestMatchers( "/adduser" , "/auth" , "/validate" , "/welcome").permitAll()
                         .and()
                .authorizeHttpRequests().requestMatchers("/users/**")
                .authenticated()

@@ -25,6 +25,7 @@ import java.util.logging.Logger;
 
 @RestController
 
+
 public class UserController {
 
 
@@ -71,7 +72,7 @@ public class UserController {
 
 
 
-    @PostMapping("/adduser")
+    @PostMapping("/users/adduser")
     public void addUser(@RequestBody User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
        userRepository.save(user);
