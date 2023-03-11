@@ -29,6 +29,8 @@ public class JwtService {
         User user =userRepository.getUserByUsername(username).get();
 
         claims.put("authorities" , user.getAuthorities());
+        claims.put("firstname" , user.getFirstname());
+        claims.put("lastname" , user.getLastname());
 
         return createToken(claims,username);
     }

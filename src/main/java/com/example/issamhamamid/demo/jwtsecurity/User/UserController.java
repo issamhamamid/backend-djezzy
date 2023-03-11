@@ -71,6 +71,20 @@ public class UserController {
     }
 
 
+    @PutMapping("/users/{id}")
+    public void updateUser(@PathVariable int id , @RequestBody User user) {
+        User olduser = userRepository.findById(id).get();
+        olduser.setUsername(user.getUsername());
+        olduser.setLastname(user.getLastname());
+        olduser.setFirstname(user.getFirstname());
+        olduser.setRoles(user.getRoles());
+        olduser.setBirthDate(user.getBirthDate());
+        olduser.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(olduser);
+
+    }
+
+
 
     @PostMapping("/users/adduser")
     public void addUser(@RequestBody User user) {
