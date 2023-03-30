@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,6 +19,7 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String Sender;
+    private LocalDateTime sentDate;
     private String input;
 }
 
