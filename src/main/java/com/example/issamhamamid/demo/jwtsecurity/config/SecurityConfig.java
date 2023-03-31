@@ -62,7 +62,7 @@ public class SecurityConfig {
        return http.csrf()
                 .disable()
                         .authorizeHttpRequests()
-                         .requestMatchers( "/adduser" , "/auth" , "/validate" , "/chat").permitAll()
+                         .requestMatchers( "/adduser" , "/auth" , "/validate" , "/chat" , "/welcome").permitAll()
                         .and()
                .authorizeHttpRequests().requestMatchers("/users/**" , "/messages")
                .authenticated()
